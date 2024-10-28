@@ -1,27 +1,22 @@
-'use strict';
+"use strict";
 
-
-
-
-
-
-// Đặt thời gian đếm ngược 
-const clockElement = document.getElementById('clock');
+// Đặt thời gian đếm ngược
+const clockElement = document.getElementById("clock");
 let remainingTime = 15 * 60 * 60; // 15 hours in seconds
 
 setInterval(() => {
-    if (remainingTime >= 0) {
-        const hours = Math.floor(remainingTime / 3600);
-        const minutes = Math.floor((remainingTime % 3600) / 60);
-        const seconds = remainingTime % 60;
+  if (remainingTime >= 0) {
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
 
-        clockElement.innerText = 
-            `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    clockElement.innerText = `${String(hours).padStart(2, "0")}:${String(
+      minutes,
+    ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
-        remainingTime--;
-    }
+    remainingTime--;
+  }
 }, 1000);
-
 
 const addEventOnElem = function (elem, type, callback) {
   if (elem.length > 1) {
@@ -31,9 +26,7 @@ const addEventOnElem = function (elem, type, callback) {
   } else {
     elem.addEventListener(type, callback);
   }
-}
-
-
+};
 
 /**
  * navbar toggle
@@ -47,18 +40,16 @@ const overlay = document.querySelector("[data-overlay]");
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
-}
+};
 
 addEventOnElem(navTogglers, "click", toggleNavbar);
 
 const closeNavbar = function () {
   navbar.classList.remove("active");
   overlay.classList.remove("active");
-}
+};
 
 addEventOnElem(navbarLinks, "click", closeNavbar);
-
-
 
 /* header sticky & back top btn active */
 
@@ -73,7 +64,7 @@ const headerActive = function () {
     header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
-}
+};
 
 addEventOnElem(window, "scroll", headerActive);
 
@@ -87,11 +78,9 @@ const headerSticky = function () {
   }
 
   lastScrolledPos = window.scrollY;
-}
+};
 
 addEventOnElem(window, "scroll", headerSticky);
-
-
 
 /* hiệu ứng cuộn hiện ra */
 
@@ -103,9 +92,39 @@ const scrollReveal = function () {
       sections[i].classList.add("active");
     }
   }
-}
+};
 
 scrollReveal();
 
 addEventOnElem(window, "scroll", scrollReveal);
 
+listData = [
+  {
+    id: 1,
+    name: "Nike Air Force 1 '07",
+    price: 120,
+    img: "assets/images/shoes/shoe-1.png",
+    quantity: 1,
+  },
+  {
+    id: 2,
+    name: "Nike Air Force 1 '07",
+    price: 120,
+    img: "assets/images/shoes/shoe-2.png",
+    quantity: 1,
+  },
+  {
+    id: 3,
+    name: "Nike Air Force 1 '07",
+    price: 120,
+    img: "assets/images/shoes/shoe-3.png",
+    quantity: 1,
+  },
+  {
+    id: 4,
+    name: "Nike Air Force 1 '07",
+    price: 120,
+    img: "assets/images/shoes/shoe-4.png",
+    quantity: 1,
+  },
+];
