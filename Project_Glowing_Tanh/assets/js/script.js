@@ -97,34 +97,3 @@ const scrollReveal = function () {
 scrollReveal();
 
 addEventOnElem(window, "scroll", scrollReveal);
-
-listData = [
-  {
-    id: 1,
-    name: "Nike Air Force 1 '07",
-    price: 120,
-    img: "assets/images/shoes/shoe-1.png",
-    quantity: 1,
-  },
-  {
-    id: 2,
-    name: "Nike Air Force 1 '07",
-    price: 120,
-    img: "assets/images/shoes/shoe-2.png",
-    quantity: 1,
-  },
-  {
-    id: 3,
-    name: "Nike Air Force 1 '07",
-    price: 120,
-    img: "assets/images/shoes/shoe-3.png",
-    quantity: 1,
-  },
-  {
-    id: 4,
-    name: "Nike Air Force 1 '07",
-    price: 120,
-    img: "assets/images/shoes/shoe-4.png",
-    quantity: 1,
-  },
-];
