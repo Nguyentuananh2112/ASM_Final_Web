@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 import { generateBannerList } from "./data/list-banner.js";
-// import { generateProductList } from "./data/list-product.js";
+import { generateProductList } from "./data/list-product.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   generateBannerList();

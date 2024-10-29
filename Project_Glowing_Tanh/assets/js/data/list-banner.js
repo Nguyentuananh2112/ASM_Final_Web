@@ -1,4 +1,6 @@
 // list-banner.js
+import { addToCart } from "../common-component.js";
+
 const products = [
   {
     title: "Reveal The Beauty of Skin",
@@ -28,7 +30,7 @@ const products = [
 
 // Hàm để tạo danh sách sản phẩm và chèn vào DOM
 function generateBannerList() {
-  const productListElement = document.querySelector(".has-scrollbar");
+  const productListElement = document.querySelector("#list-banner");
   products.forEach((product) => {
     const li = document.createElement("li");
     li.className = "scrollbar-item";
@@ -44,7 +46,7 @@ function generateBannerList() {
       product.currency
     }</p>
           <a href="#" class="btn btn-primary">Shop Now</a>
-          <button class="btn btn-add-to-cart">Add to Cart</button>
+          <button class="btn btn-add-to-cart"><ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon></button>
         </div>
       </div>
     `;
@@ -56,24 +58,12 @@ function generateBannerList() {
         product.price,
         product.currency,
         product.imageUrl,
+        product.description,
       );
     });
 
     productListElement.appendChild(li);
   });
-}
-
-// Hàm thêm sản phẩm vào giỏ hàng
-function addToCart(name, price, currency, imageUrl) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Lấy giỏ hàng từ localStorage
-
-  // Thêm sản phẩm vào giỏ hàng
-  cart.push({ name, price, currency, imageUrl });
-
-  // Cập nhật giỏ hàng vào localStorage
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert(`${name} has been added to your cart!`); // Thông báo thêm thành công
 }
 
 // Xuất hàm để sử dụng
